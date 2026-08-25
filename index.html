@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Shahriar Tashmim | Portfolio</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",
+    "Segoe UI",Arial,sans-serif;
+
+    color:white;
+
+    background:
+    radial-gradient(circle at 10% 10%,#463b82,transparent 32%),
+    radial-gradient(circle at 90% 25%,#164e75,transparent 30%),
+    radial-gradient(circle at 80% 90%,#70284f,transparent 30%),
+    #070a12;
+
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    width:100%;
+    max-width:850px;
+    margin:auto;
+}
+
+/* GLASS */
+
+.glass{
+    background:rgba(255,255,255,.075);
+    border:1px solid rgba(255,255,255,.13);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35),
+    inset 0 1px 0 rgba(255,255,255,.08);
+
+    border-radius:28px;
+}
+
+/* NAVBAR */
+
+.nav{
+    height:70px;
+    padding:12px 18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:600;
+}
+
+.logoCircle{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:linear-gradient(135deg,#8d5cff,#345cff);
+
+    font-size:20px;
+    font-weight:bold;
+}
+
+.contactBtn{
+    text-decoration:none;
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    transition:.3s;
+}
+
+.contactBtn:hover{
+    background:rgba(255,255,255,.17);
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:55px 25px;
+    overflow:hidden;
+    position:relative;
+}
+
+.heroGlow{
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    background:#6355e8;
+    opacity:.25;
+
+    filter:blur(90px);
+
+    top:-80px;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+.profile{
+    position:relative;
+
+    width:160px;
+    height:160px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid rgba(255,255,255,.9);
+
+    box-shadow:
+    0 15px 50px rgba(0,0,0,.45);
+
+    animation:profileIn .8s ease;
+}
+
+@keyframes profileIn{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.status{
+    display:inline-flex;
+
+    align-items:center;
+    gap:7px;
+
+    margin-top:22px;
+
+    padding:8px 14px;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    color:#dce1eb;
+
+    font-size:13px;
+}
+
+.dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#42e98a;
+
+    box-shadow:0 0 12px #42e98a;
+}
+
+h1{
+    position:relative;
+
+    margin-top:18px;
+
+    font-size:42px;
+
+    letter-spacing:-1.5px;
+}
+
+.title{
+    margin-top:7px;
+
+    font-size:20px;
+
+    color:#7f8cff;
+}
+
+.bio{
+    max-width:550px;
+
+    margin:18px auto;
+
+    color:#cbd0db;
+
+    line-height:1.7;
+}
+
+/* BUTTONS */
+
+.heroButtons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:28px;
+
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:15px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    background:rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.btn.primary{
+    background:linear-gradient(135deg,#7957e8,#405fe7);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECTION */
+
+.section{
+    padding:28px;
+
+    margin-top:20px;
+}
+
+.sectionTitle{
+    font-size:22px;
+
+    margin-bottom:20px;
+}
+
+/* SOCIAL */
+
+.social{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.social a{
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    text-decoration:none;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:17px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+}
+
+.social a:hover{
+    transform:translateX(5px);
+
+    background:rgba(255,255,255,.12);
+}
+
+.socialLeft{
+    display:flex;
+    align-items:center;
+    gap:13px;
+}
+
+.socialIcon{
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:13px;
+
+    background:rgba(255,255,255,.1);
+
+    font-weight:bold;
+}
+
+.arrow{
+    color:#8d95a4;
+    font-size:20px;
+}
+
+/* ABOUT */
+
+.about{
+    color:#cbd0db;
+
+    line-height:1.8;
+}
+
+/* DETAILS */
+
+.details{
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:12px;
+
+    margin-top:22px;
+}
+
+.detail{
+    text-align:center;
+
+    padding:18px 10px;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.055);
+
+    border:1px solid rgba(255,255,255,.07);
+}
+
+.detailIcon{
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.detail small{
+    display:block;
+
+    color:#8e96a6;
+
+    margin-bottom:5px;
+}
+
+.detail span{
+    font-size:14px;
+}
+
+/* SKILLS */
+
+.skills{
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+}
+
+.skill{
+    padding:11px 17px;
+
+    border-radius:14px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.1);
+
+    color:#e4e7ee;
+}
+
+/* FOOTER */
+
+.footer{
+    margin-top:20px;
+
+    padding:25px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:15px;
+}
+
+.footerText{
+    color:#c9ced8;
+}
+
+.top{
+    width:45px;
+    height:45px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(135deg,#7757e8,#405ee8);
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    body{
+        padding:12px;
+    }
+
+    h1{
+        font-size:32px;
+    }
+
+    .hero{
+        padding:42px 18px;
+    }
+
+    .profile{
+        width:135px;
+        height:135px;
+    }
+
+    .details{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .section{
+        padding:22px 17px;
+    }
+
+    .footer{
+        flex-direction:column;
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body id="top">
+
+<div class="container">
+
+
+<!-- NAVBAR -->
+
+<div class="nav glass">
+
+    <div class="logo">
+
+        <div class="logoCircle">
+            S
+        </div>
+
+        Shahriar Tashmim
+
+    </div>
+
+    <a href="#contact" class="contactBtn">
+        Contact Me
+    </a>
+
+</div>
+
+
+<!-- HERO -->
+
+<section class="hero glass">
+
+    <div class="heroGlow"></div>
+
+    <!-- PROFILE PHOTO -->
+    <img
+        src="profile.jpg"
+        class="profile"
+        alt="Shahriar Tashmim"
+    >
+
+    <div class="status">
+        <span class="dot"></span>
+        Available for work
+    </div>
+
+    <h1>
+        Shahriar Tashmim
+    </h1>
+
+    <div class="title">
+        Web Developer
+    </div>
+
+    <p class="bio">
+        I build modern, fast and beautiful websites.
+        Passionate about coding, technology and learning new things.
+    </p>
+
+
+    <div class="heroButtons">
+
+        <a href="#" class="btn primary">
+            ↓ Download CV
+        </a>
+
+        <a href="#contact" class="btn">
+            💬 Message Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- SOCIAL -->
+
+<section class="section glass">
+
+    <h2 class="sectionTitle">
+        🔗 My Social Profiles
+    </h2>
+
+
+    <div class="social">
+
+
+        <a href="YOUR_FACEBOOK_LINK" target="_blank">
+
+            <div class="socialLeft">
+
+                <div class="socialIcon">
+                    f
+                </div>
+
+                <div>
+                    <strong>Facebook</strong>
+                    <br>
+                    <small>@shahriar.tashmim</small>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a href="YOUR_INSTAGRAM_LINK" target="_blank">
+
+            <div class="socialLeft">
+
+                <div class="socialIcon">
+                    ◎
+                </div>
+
+                <div>
+                    <strong>Instagram</strong>
+                    <br>
+                    <small>@shahriar.tashmim</small>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a href="YOUR_TIKTOK_LINK" target="_blank">
+
+            <div class="socialLeft">
+
+                <div class="socialIcon">
+                    ♪
+                </div>
+
+                <div>
+                    <strong>TikTok</strong>
+                    <br>
+                    <small>@shahriar</small>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a href="YOUR_YOUTUBE_LINK" target="_blank">
+
+            <div class="socialLeft">
+
+                <div class="socialIcon">
+                    ▶
+                </div>
+
+                <div>
+                    <strong>YouTube</strong>
+                    <br>
+                    <small>My Channel</small>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+        <a href="YOUR_GITHUB_LINK" target="_blank">
+
+            <div class="socialLeft">
+
+                <div class="socialIcon">
+                    GH
+                </div>
+
+                <div>
+                    <strong>GitHub</strong>
+                    <br>
+                    <small>My Projects</small>
+                </div>
+
+            </div>
+
+            <div class="arrow">›</div>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section glass">
+
+    <h2 class="sectionTitle">
+        👤 About Me
+    </h2>
+
+    <p class="about">
+
+        Hi! I'm Shahriar Tashmim.
+        I'm interested in web development and technology.
+        I love creating websites and learning new things.
+
+        <br><br>
+
+        My goal is to build unique and useful digital experiences.
+
+    </p>
+
+
+    <div class="details">
+
+
+        <div class="detail">
+
+            <div class="detailIcon">📍</div>
+
+            <small>Location</small>
+
+            <span>Bangladesh</span>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detailIcon">💻</div>
+
+            <small>Focus</small>
+
+            <span>Web Development</span>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detailIcon">🌐</div>
+
+            <small>Languages</small>
+
+            <span>Bangla, English</span>
+
+        </div>
+
+
+        <div class="detail">
+
+            <div class="detailIcon">🚀</div>
+
+            <small>Status</small>
+
+            <span>Learning</span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="section glass">
+
+    <h2 class="sectionTitle">
+        🚀 My Skills
+    </h2>
+
+
+    <div class="skills">
+
+        <div class="skill">
+            HTML
+        </div>
+
+        <div class="skill">
+            CSS
+        </div>
+
+        <div class="skill">
+            JavaScript
+        </div>
+
+        <div class="skill">
+            Python
+        </div>
+
+        <div class="skill">
+            Git & GitHub
+        </div>
+
+        <div class="skill">
+            Web Design
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section
+    class="section glass"
+    id="contact"
+>
+
+    <h2 class="sectionTitle">
+        📩 Contact Me
+    </h2>
+
+    <p class="about">
+
+        Want to connect with me?
+        Send me a message through my social profiles.
+
+    </p>
+
+
+    <div class="heroButtons">
+
+        <a
+            href="mailto:YOUR_EMAIL@gmail.com"
+            class="btn primary"
+        >
+            ✉ Email Me
+        </a>
+
+        <a
+            href="YOUR_FACEBOOK_MESSENGER_LINK"
+            class="btn"
+            target="_blank"
+        >
+            💬 Messenger
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<div class="footer glass">
+
+    <div class="footerText">
+
+        Let's Build Something Amazing 🤝
+
+        <br>
+
+        <small>
+            © 2026 Shahriar Tashmim
+        </small>
+
+    </div>
+
+
+    <a href="#top" class="top">
+        ↑
+    </a>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
